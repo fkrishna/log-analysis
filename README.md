@@ -16,9 +16,9 @@ An internal reporting tool built in python that operate on a large database
 
 # Installation
 1. Download <a href="https://git-scm.com/downloads" target="_blank">Git</a>, <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a> and <a href="https://www.vagrantup.com/downloads.html" target="_blank">Vagrant</a>
-2. Launch terminal and run the following commands
+2. Launch terminal to clone the project
 ```
-git clone https://github.com/fkrishna/item-catalog.git
+https://github.com/fkrishna/log-analysis.git
 ```
 ```
 cd log-analysis

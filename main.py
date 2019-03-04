@@ -55,12 +55,12 @@ def db_get_popular_authors():
 def db_get_error_logs():
     cursor = db_connection()
     error_reports = """
-        SELECT * from 
+        SELECT * FROM 
             (select date(time),round(100.0*sum(case log.status
-            when '200 OK'  then 0 else 1 end)/count(log.status),3) as error 
+            when '200 OK'  then 0 else 1 end) / count(log.status), 3) as error 
             from log group
             by date(time) order by error desc) 
-        as subq where error > 1;
+        AS sub WHERE error > 1;
     """
     cursor.execute(error_reports)
     return cursor.fetchall()
