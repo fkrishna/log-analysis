@@ -15,7 +15,7 @@ An internal reporting tool built in python that operate on a large database
 * log -> one entry for each time a user visit the website
 
 # Installation
-1. You will need to have <a href="https://git-scm.com/downloads">Git</a>, <a href="https://www.python.org/downloads/">Python</> and <a href="http://initd.org/psycopg/">Psycopg</a> which is a PostgreSQL database adapter for the Python programming language installed on your environment
+1. You will need to have <a href="https://git-scm.com/downloads">Git</a>, <a href="https://www.python.org/downloads/">Python</a> and <a href="http://initd.org/psycopg/">Psycopg</a> which is a PostgreSQL database adapter for the Python programming language installed on your environment
 2. Launch terminal to clone the project
 ```
 https://github.com/fkrishna/log-analysis.git
