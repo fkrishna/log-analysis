@@ -1,0 +1,32 @@
+** LOGS ANALYSIS **
+
+- Top 3 Most Popular Articles
+
+Title: Candidate is jerk, alleges rival
+Views: 338,647
+---------------------------------------------
+Title: Bears love berries, alleges bear
+Views: 253,801
+---------------------------------------------
+Title: Bad things gone, say good people
+Views: 170,098
+---------------------------------------------
+
+- Most Popular Article Authors
+
+Author Name: Ursula La Multa
+Views: 507,594
+---------------------------------------------
+Author Name: Rudolf von Treppenwitz
+Views: 423,457
+---------------------------------------------
+Author Name: Anonymous Contributor
+Views: 170,098
+---------------------------------------------
+Author Name: Markoff Chaney
+Views: 84,557
+---------------------------------------------
+
+- Days on which more than 1% of requests lead to errors
+
+2016-07-17 - 2.263 %
