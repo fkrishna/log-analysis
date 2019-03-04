@@ -20,9 +20,13 @@ An internal reporting tool built in python that operate on a large database
 ```
 https://github.com/fkrishna/log-analysis.git
 ```
-3. Then run this command to the log analysis directory
+3. Run this command to the log analysis directory
 ```
 cd log-analysis
 ```
 3. Download the <a href="https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip">newsdata.sql</a> file and place it at the root of the log analysis directory
+4. Execute the file
+```
+python main.py
+```
 
