@@ -20,7 +20,6 @@ An internal reporting tool built in python that operate on a large database
 ```
 https://github.com/fkrishna/log-analysis.git
 ```
-3. Run this command to the log analysis directory
 ```
 cd log-analysis
 ```
