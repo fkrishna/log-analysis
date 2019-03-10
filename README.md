@@ -15,7 +15,7 @@ An internal reporting tool built in python that operate on a large database
 * log -> one entry for each time a user visit the website
 
 # Installation
-1. Download <a href="https://git-scm.com/downloads" target="_blank">Git</a>, <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a> and <a href="https://www.vagrantup.com/downloads.html" target="_blank">Vagrant</a>
+1. Download <a href="https://www.python.org/downloads/" target="_blank">Python</a> and <a href="https://www.postgresql.org/download/" target="_blank">PostgreSQL</a>
 2. Launch terminal to clone the project
 ```
 https://github.com/fkrishna/log-analysis.git
