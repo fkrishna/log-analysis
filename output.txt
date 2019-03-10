@@ -29,4 +29,4 @@ Views: 84,557
 
 - Days on which more than 1% of requests lead to errors
 
-2016-07-17 - 2.263 %
+2016-07-17
