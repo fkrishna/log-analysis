@@ -54,16 +54,18 @@ def db_get_popular_authors():
 # days on which more than 1% of requests lead to errors
 def db_get_error_logs():
     cursor = db_connection()
-    error_reports = """
-        SELECT * FROM 
-            (select date(time),round(100.0*sum(case log.status
-            when '200 OK'  then 0 else 1 end) / count(log.status), 3) as error 
-            from log group
-            by date(time) order by error desc) 
-        AS sub WHERE error > 1;
+    query = """
+    SELECT total_request_error.time
+    FROM total_request_error, total_request
+    WHERE (total_request_error.total * 100) / total_request.total > 1
+    group by total_request_error.time
     """
-    cursor.execute(error_reports)
+    cursor.execute(query)
+    
+  
     return cursor.fetchall()
+
+
 
 #######################
 # OUTPUT 
@@ -76,7 +78,7 @@ def output_popular_articles():
         print("Views: " + format_num(items[1]))
         separator()
 
-def output_popular_auhtors():
+def output_popular_authors():
     print("\n- Most Popular Article Authors\n")
     for items in db_get_popular_authors():
         print("Author Name: " + str(items[0]))
@@ -86,13 +88,14 @@ def output_popular_auhtors():
 def output_error_logs():
     print("\n- Days on which more than 1% of requests lead to errors\n")
     for items in db_get_error_logs():
-        print (str(items[0]) + ' - ' + str(items[1]) + ' %')
+        print(items[0])
+        separator()
 
 
 def main():
     print("\n** LOGS ANALYSIS **")
     output_popular_articles()
-    output_popular_auhtors()
+    output_popular_authors()
     output_error_logs()
     
 
