@@ -1,33 +1,41 @@
+#!/usr/bin/env python
+
 import psycopg2
 
 #######################
-# HELPER 
+# HELPER
 #######################
 
-def separator(n = 45, sep = '-'):
+
+def separator(n=45, sep='-'):
     print(sep * n)
+
 
 def format_num(num):
     return "{:,}".format(num)
 
 #######################
-# DB SERVICES 
+# DB SERVICES
 #######################
 
+
 DBNAME = "news"
+
 
 def db_connection():
     db = psycopg2.connect(database=DBNAME)
     return db.cursor()
 
 # most articles that have been accessed the most
+
+
 def db_get_popular_articles(limit):
     cursor = db_connection()
     query = """
-        SELECT title, 
+        SELECT title,
         COUNT(path) as nviews FROM articles
         JOIN log on log.path = CONCAT('/article/', articles.slug)
-        GROUP BY title, path 
+        GROUP BY title, path
         ORDER BY nviews DESC LIMIT {}
     """.format(limit)
 
@@ -39,7 +47,7 @@ def db_get_popular_articles(limit):
 def db_get_popular_authors():
     cursor = db_connection()
     query = """
-        SELECT name, 
+        SELECT name,
         COUNT(*) as nviews
         FROM authors, articles, log
         WHERE authors.id = articles.author
@@ -61,14 +69,12 @@ def db_get_error_logs():
     group by total_request_error.time
     """
     cursor.execute(query)
-    
-  
+
     return cursor.fetchall()
 
 
-
 #######################
-# OUTPUT 
+# OUTPUT
 #######################
 
 def output_popular_articles():
@@ -78,12 +84,14 @@ def output_popular_articles():
         print("Views: " + format_num(items[1]))
         separator()
 
+
 def output_popular_authors():
     print("\n- Most Popular Article Authors\n")
     for items in db_get_popular_authors():
         print("Author Name: " + str(items[0]))
         print("Views: " + format_num(items[1]))
         separator()
+
 
 def output_error_logs():
     print("\n- Days on which more than 1% of requests lead to errors\n")
@@ -97,7 +105,7 @@ def main():
     output_popular_articles()
     output_popular_authors()
     output_error_logs()
-    
+
 
 if __name__ == '__main__':
     main()
